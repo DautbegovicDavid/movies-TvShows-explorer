@@ -1,0 +1,18 @@
+<div class="container" style="margin-bottom: 1em;">
+    <div class="d-flex justify-content-center"  *ngIf="!movies">
+        <div class="spinner-grow" style="width: 5rem; height: 5rem;margin-top: 50%;" role="status"></div> 
+    </div>
+    <div class="row" *ngIf="movies">
+        <div *ngFor="let m of movies" class="card col-md-4 col-sm-6 col-xs-12">
+            <div class="alert alert-primary"
+            [routerLink]="['/movie-details',m.imdbID]"
+            style="cursor: pointer;">
+                <div class="card-body">
+                    <h4 class="card-title">{{m.Title}}</h4>
+                    <p>{{m.Year}}</p>
+                    <img src="{{m.Poster}}" class="card-img-top" alt="{{m.Title}}" style="max-height: 28em;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

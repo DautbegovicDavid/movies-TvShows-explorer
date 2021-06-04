@@ -1,0 +1,25 @@
+<div class="alert alert-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 ">
+                <h3 [routerLink]="['/home']" style="cursor: pointer;padding-top: 0.3em;">Search Movies & Shows</h3>
+            </div>
+            <div class="col-md-6">
+                <form #loginForm="ngForm" (ngSubmit)="submit(searchText)">
+                    <input type="text" 
+                    name="name" class="form-control" 
+                    autofocus
+                    [(ngModel)]="searchText"
+                    placeholder="Search movies"
+                    required
+                   >
+                </form>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-success"  #focusTrg type="submit"  [disabled]="loginForm.invalid" style="float: right;width: 50%;" (click)="submit(searchText)">
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

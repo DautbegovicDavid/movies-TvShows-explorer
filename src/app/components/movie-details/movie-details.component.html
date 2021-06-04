@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="d-flex justify-content-center" style="margin-top: 20em;" *ngIf="!movie">
+        <div class="spinner-grow" style="width: 5rem; height: 5rem;margin-top: auto;" role="status"></div> 
+    </div>
+    <div class="row" *ngIf="movie">
+        <div class="col-md-4" style="align-content: center;">
+            <img src="{{movie.Poster}}" alt="{{movie.Title}}"class="img img-thumbnail">
+        </div>
+        <div class="col-md-8" style="padding-bottom:1em">
+            <br>
+            <h3>{{movie.Title}}</h3>
+            <table class="table table-striped ">
+                <tbody>
+                    <tr>
+                        <td>Director</td>
+                        <td>{{movie.Director}}</td>
+                    </tr>
+                    <tr>
+                        <td>Plot</td>
+                        <td>{{movie.Plot}}</td>
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        <td>{{movie.Year}}</td>
+                    </tr>
+                    <tr>
+                        <td>Actors</td>
+                        <td>{{movie.Actors}}</td>
+                    </tr>
+                    <tr>
+                        <td>BoxOffice</td>
+                        <td>{{movie.BoxOffice}}</td>
+                    </tr>
+                    <tr>
+                        <td>Released</td>
+                        <td>{{movie.Released}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-secondary" (click)="GoBack()" style="float: right;">Go Back</button>
+        </div>
+        <br>
+    </div>
+</div>
